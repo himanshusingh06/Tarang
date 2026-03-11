@@ -1,7 +1,7 @@
 fastapi==0.115.0
 uvicorn[standard]==0.30.6
 SQLAlchemy==2.0.35
-asyncpg==0.29.0
+asyncpg>=0.30
 pydantic
 pydantic-settings
 python-jose[cryptography]==3.3.0
