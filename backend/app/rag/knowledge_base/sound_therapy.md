@@ -1,0 +1,1 @@
+Vedic sound therapy uses specific frequencies and tonal structures to support relaxation, concentration, and emotional release. Combining frequencies with binaural beats can help guide brainwave states.

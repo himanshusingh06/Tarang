@@ -1,0 +1,1 @@
+Ayurveda focuses on balancing Vata, Pitta, and Kapha. Vata benefits from grounding, warmth, and slow rhythms. Pitta benefits from cooling, gentle, and soothing soundscapes. Kapha benefits from energizing, uplifting, and rhythmic stimulation.
