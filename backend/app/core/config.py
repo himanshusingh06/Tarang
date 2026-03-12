@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
     SECRET_KEY: str = "CHANGE_ME"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7
-    DATABASE_URL: str = "postgresql+asyncpg://postgres:Himanshu%401@localhost:5432/dhun"
+    DATABASE_URL: str = "postgresql+asyncpg://tarand_user:5dfgtjjGZkkA2g0JgNJQ09LE0hC2HrMW@dpg-d6oplevkijhs73ai3640-a.oregon-postgres.render.com/tarand"
     GOOGLE_API_KEY: str | None = None
     CHROMA_API_KEY: str | None = None
     CHROMA_TENANT: str | None = None

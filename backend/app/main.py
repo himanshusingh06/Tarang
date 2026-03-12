@@ -15,9 +15,15 @@ import app.models  # noqa: F401
 setup_logging()
 
 app = FastAPI(title=settings.PROJECT_NAME)
+
+origins = [
+    "http://localhost:5173",
+    "https://tarangcure.netlify.app",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
