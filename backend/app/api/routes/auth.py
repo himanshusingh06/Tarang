@@ -4,7 +4,12 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.api.deps import get_db
-from app.core.security import create_access_token, get_password_hash, verify_password
+from app.core.security import (
+    create_access_token,
+    get_password_hash,
+    needs_rehash,
+    verify_password,
+)
 from app.models.user import User
 from app.schemas.auth import Token
 from app.schemas.user import UserCreate, UserRead
@@ -41,5 +46,10 @@ async def login(
     user = result.scalar_one_or_none()
     if not user or not verify_password(form_data.password, user.hashed_password):
         raise HTTPException(status_code=400, detail="Incorrect email or password")
+    if needs_rehash(user.hashed_password):
+        user.hashed_password = get_password_hash(form_data.password)
+        db.add(user)
+        await db.commit()
+        await db.refresh(user)
     token = create_access_token(str(user.id))
     return Token(access_token=token)
